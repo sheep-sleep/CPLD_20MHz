@@ -1,0 +1,11 @@
+module test (clk1023,clk1023_out, transmit_en, transmit_en_out);
+input   clk1023;
+input   transmit_en;
+
+output  wire transmit_en_out;
+output  wire clk1023_out;
+
+assign clk1023_out=clk1023;
+assign transmit_en_out=transmit_en;
+
+endmodule

@@ -1,0 +1,85 @@
+//module spread_spectrum (clk_ca,code_out,gps_data,rst,gps_clk,ss_data,dpsk);
+//input clk_ca;
+//input code_out;
+//input gps_data;
+//input gps_clk;
+//input rst;
+//reg code_out1_reg,gps_data1_reg,code_out2_reg,gps_data2_reg,ss_en;
+//output reg ss_data,dpsk;
+//
+//always @ (posedge clk_ca or negedge rst)
+//begin
+//	if (!rst)
+//		begin
+//			ss_en=0;
+//		end
+//	else begin		
+//		if (gps_clk == 1)
+//			begin
+//			ss_en=1;
+//			code_out1_reg <=code_out;
+//			gps_data1_reg <=gps_data;	
+//			end
+//		else begin
+//			ss_en<= ss_en;
+//			code_out1_reg <=code_out;
+//			gps_data1_reg <=gps_data;
+//			end
+//	end
+//end
+//
+//always @ (posedge clk_ca)
+//begin
+//	if (ss_en ==1)
+//		begin
+//			ss_data<= code_out1_reg^gps_data1_reg;
+//			dpsk <= ss_data^dpsk;
+//		end
+//	else begin
+//		ss_data<=0;
+//		dpsk <= 0;
+//	end
+//
+//end
+//
+//
+//
+//
+////assign ss_data = (ss_en)? code_out1_reg^gps_data1_reg:0;//扩频操作
+//endmodule
+
+
+
+module spread_spectrum (clk_ca,code_out,gps_data,rst,ss_data,dpsk);
+input clk_ca;
+input code_out;
+input gps_data;
+//input gps_clk;
+input rst;
+//reg code_out_reg,gps_data_reg,ss_en;
+output reg  dpsk;
+output wire ss_data;
+
+reg dpsk_buf;
+
+assign ss_data = (rst)?code_out^gps_data:0;
+
+always @ (posedge clk_ca or negedge rst)
+begin	
+	if (!rst)
+		begin
+//			ss_data <= 0;
+			dpsk <= 0;
+		end
+	else begin
+//		   ss_data <= code_out^gps_data;
+			dpsk <= ss_data^dpsk;
+	end
+end
+
+
+//    assign dpsk = dpsk_buf ^ ss_data;
+
+
+//assign ss_data = (ss_en)? code_out_reg^gps_data_reg:0;//扩频操作
+endmodule

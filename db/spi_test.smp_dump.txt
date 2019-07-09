@@ -1,0 +1,6 @@
+
+State Machine - |spi_test|STM32_CPLD_SPI:inst6|state
+Name state.000 state.010 state.001 
+state.000 0 0 0 
+state.001 1 0 1 
+state.010 1 1 0 

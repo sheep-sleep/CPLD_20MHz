@@ -1,0 +1,65 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'clk_in'
+Slack : -10.727
+TNS   : -2212.792
+
+Type  : Setup 'clk_gps_ca_10M:inst5|clk_ca_1023'
+Slack : -6.241
+TNS   : -160.792
+
+Type  : Setup 'clk_generater2:inst4|clk_gps'
+Slack : -3.088
+TNS   : -331.468
+
+Type  : Hold 'clk_in'
+Slack : -1.627
+TNS   : -1.627
+
+Type  : Hold 'clk_gps_ca_10M:inst5|clk_ca_1023'
+Slack : 1.379
+TNS   : 0.000
+
+Type  : Hold 'clk_generater2:inst4|clk_gps'
+Slack : 1.640
+TNS   : 0.000
+
+Type  : Recovery 'clk_in'
+Slack : -5.797
+TNS   : -189.099
+
+Type  : Recovery 'clk_generater2:inst4|clk_gps'
+Slack : -4.953
+TNS   : -986.757
+
+Type  : Recovery 'clk_gps_ca_10M:inst5|clk_ca_1023'
+Slack : -4.544
+TNS   : -190.848
+
+Type  : Removal 'clk_generater2:inst4|clk_gps'
+Slack : 1.581
+TNS   : 0.000
+
+Type  : Removal 'clk_gps_ca_10M:inst5|clk_ca_1023'
+Slack : 4.990
+TNS   : 0.000
+
+Type  : Removal 'clk_in'
+Slack : 5.142
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk_in'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'clk_generater2:inst4|clk_gps'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk_gps_ca_10M:inst5|clk_ca_1023'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------
